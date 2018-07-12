@@ -2,7 +2,15 @@ package academy.elqoo.java8.dateandtime;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.sql.Date;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.MonthDay;
+import java.time.temporal.ChronoField;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.TemporalField;
 
 public class DateTime8 {
 
@@ -20,7 +28,7 @@ public class DateTime8 {
     }
 
     public static LocalDate findNextFriday13th(LocalDate from){
-        throw new NotImplementedException();
+       return from.with(TemporalAdjusters.next(DayOfWeek.FRIDAY)).withDayOfMonth(13);//.with(TemporalAdjusters.)
     }
 
 }
