@@ -237,12 +237,12 @@ public class StreamTest {
 
     @Test
     public void shouldBeEmptyStream(){
-        Stream<Integer> numberStream =null; //create empty stream
+        Stream<Integer> numberStream =Stream.empty(); //create empty stream
         assertNotNull(numberStream);
     }
 
     @Test
-    public void shouldGenerateFirstPrimeNumbers(){
+    public void shouldGenerateFirst10PrimeNumbers(){
         List<Integer> primeNumbers = Stream8.generateFirst10PrimeNumbers();
         assertThat(primeNumbers, contains(2,3,5,7,11,13, 17,19, 23, 29));
     }

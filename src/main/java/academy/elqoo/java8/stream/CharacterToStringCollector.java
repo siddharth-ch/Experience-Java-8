@@ -13,27 +13,28 @@ import java.util.stream.Collector;
  * Collects Characters from a string to a String
  */
 public class CharacterToStringCollector implements Collector<Character, StringBuilder, String> {
-    @Override
-    public Supplier<StringBuilder> supplier() {
-        return null;
-    }
+	@Override
+	public Supplier<StringBuilder> supplier() {
+		return () -> new StringBuilder();
+	}
 
-    @Override
-    public BiConsumer<StringBuilder, Character> accumulator() {
-        return null;
-    }
+	@Override
+	public BiConsumer<StringBuilder, Character> accumulator() {
+		return (t,c)-> t.append(c);
+	}
 
-    @Override
-    public BinaryOperator<StringBuilder> combiner() {
-        return null;    }
+	@Override
+	public BinaryOperator<StringBuilder> combiner() {
+		return (x,y)->x.append(y);
+	}
 
-    @Override
-    public Function<StringBuilder, String> finisher() {
-        return null;
-    }
+	@Override
+	public Function<StringBuilder, String> finisher() {
+		return (t)->t.toString();
+	}
 
-    @Override
-    public Set<Characteristics> characteristics() {
-        return null;
-    }
+	@Override
+	public Set<Characteristics> characteristics() {
+		return Collections.EMPTY_SET;
+	}
 }
